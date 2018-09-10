@@ -1,4 +1,4 @@
-# Constructor-Word-Guess
+# Friend Finder
 Constructor Word Guess Game in Node
 
 <!-- Put a description of what the project is -->
