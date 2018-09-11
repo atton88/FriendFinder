@@ -1,58 +1,32 @@
-# Friend Finder
-Constructor Word Guess Game in Node
+# Paired Programming Pals
+
 
 <!-- Put a description of what the project is -->
-This is a hangman game, but with pokemon. Guess the pokemon.
-
+This full-stack site will take in results from your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.
 
 # Link to deployed site
-[GitHub](https://github.com/atton88/Constructor-Word-Guess)
+[GitHub](https://github.com/atton88/paired-programming-pals)
 
 # Images
-![Guess](Capture.PNG)
+![]()
 
 # technology used
+- HTML
+- CSS
 - Javascript
 - Node.js
-- NPM: inquirer
+- NPM: express, path, body-parser
+- Heroku
 
 # code snippets
 
-Play game code is not much when most of the functionality is in the constructor objects
-```
-function playGame() {
-    console.log("----------------------------\n");
-    inquirer.prompt([{
-        type: "input",
-        message: "Guess a letter!",
-        name: "guess",
-        validate: function(guess) {
-            if (guess.length === 1 && isNaN(parseFloat(guess))){
-                return !lettersGuessed.includes(guess.toUpperCase());
-            } else {
-                return false;
-            }
-        }
-    }]). then (function(answer) {
-        var guess = answer.guess.toUpperCase();
-        lettersGuessed.push(guess);
-        poke.guessLetter(guess);
-        console.log("\n" + poke.toString() + "\n");
-        if (poke.isSolved()){
-            console.log("YOU WIN!");
-            console.log("Next Game");
-            startGame();
-        } else {
-            playGame();
-        }
-    })
-}
-```
+
 
 # Learning points
 <!-- Learning points where you would write what you thought was helpful -->
 - Learned more node.js
-- Learned to use constructor function to be more efficient with coding
+- Learned to use npm express to create routes
+- Learned to run client and server side ajax calls
 - Learned to import and require other js files
 
 # Author 
