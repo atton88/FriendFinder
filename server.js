@@ -1,5 +1,5 @@
 // Andrew Ton
-// Friend Finder
+// Paired Programming Pals
 
 // require npm packages
 var express = require("express");
