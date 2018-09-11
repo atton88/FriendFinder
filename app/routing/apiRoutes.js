@@ -31,8 +31,6 @@ module.exports = function(app){
 
           // get sum for biggest discrepancy in points
           var sum = 0;
-
-
           diffArr.forEach(function(elem){
             sum += Math.abs(elem);
           })
@@ -80,12 +78,12 @@ module.exports = function(app){
 
         })
 
-        console.log("test")
-        console.log(matches)
-        console.log(matches.learn)
+        // console.log("test")
+        // console.log(matches)
+        // console.log(matches.learn)
 
-
-        friends.push(res.body);
+        // console.log(req.body);
+        friends.push(req.body);
         res.json(matches);
         // console.log(friends) //test
 

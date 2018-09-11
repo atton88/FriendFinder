@@ -2,8 +2,8 @@
 
 var friends = [
     {
-        "name": "One",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
+        "name": "Jen",
+        "photo": "http://registry.pw/resources/images/slider1_image.png",
         "scores": [
             5,
             1,
@@ -17,141 +17,66 @@ var friends = [
             1
         ]
     }, {
-        "name": "Two",
+        "name": "Dog",
         "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
-            5,
             1,
-            4,
-            4,
-            5,
             1,
-            2,
-            5,
-            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
             1
         ]
     }, {
-        "name": "Three",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
+        "name": "Ron",
+        "photo": "https://cdn.business2community.com/wp-content/uploads/2014/04/profile-picture-300x300.jpg",
         "scores": [
-            5,
-            1,
-            5,
-            4,
-            5,
-            1,
+            3,
             2,
-            5,
-            4,
+            3,
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
             1
         ]
     }, {
-        "name": "Four",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
+        "name": "Chen",
+        "photo": "https://inside.rotman.utoronto.ca/workingprofessional/files/2017/04/Bradley-Leufkens.jpg",
         "scores": [
             5,
-            1,
-            4,
             5,
-            5,
-            1,
-            2,
-            5,
-            4,
-            1
-        ]
-    }, {
-        "name": "Five",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
-        "scores": [
-            5,
-            1,
-            4,
-            4,
-            5,
-            1,
-            2,
-            5,
-            4,
-            1
-        ]
-    }, {
-        "name": "Six",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
-        "scores": [
-            5,
-            1,
-            4,
-            4,
             5,
             5,
             2,
-            5,
-            4,
-            1
-        ]
-    }, {
-        "name": "Seven",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
-        "scores": [
-            5,
-            1,
-            4,
-            4,
-            5,
-            1,
-            5,
-            5,
-            4,
-            1
-        ]
-    }, {
-        "name": "Eight",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
-        "scores": [
-            5,
-            1,
-            4,
-            4,
-            5,
-            1,
             2,
+            1,
+            1,
+            1,
+            1
+        ]
+    }, {
+        "name": "Guy",
+        "photo": "https://nextshark-vxdsockgvw3ki.stackpathdns.com/wp-content/uploads/2017/08/Tinder-Niket-Biswas.jpg",
+        "scores": [
             5,
             4,
-            1
+            4,
+            4,
+            5,
+            4,
+            4,
+            3,
+            3,
+            3
         ]
-    }, {
-        "name": "Nine",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
-        "scores": [
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
-            5
-        ]
-    }, {
-        "name": "Ten",
-        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
-        "scores": [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-        ]
-    },
+    }
 ]
 
     module.exports = friends;

@@ -14,9 +14,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Chosen -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -29,6 +28,7 @@
 		</a>
     <hr>
 
+		<!-- Forms -->
     <h3><strong>About You</strong></h3>
     <h4>Name (Required)</h4>
     <input type="text" id="name" class="form-control" required>
@@ -38,6 +38,7 @@
 
     <hr>
 
+		<!-- Questions -->
     <h3><strong>Question 1</strong></h3>
     <h4>How strong are you at HTML?.</h4>
     <form id="q1">
@@ -138,6 +139,106 @@
 			</label>
 		</form>
 
+		<h3><strong>Question 6</strong></h3>
+    <h4>How strong are you at data persistence (Local storage, cookies, FireBase)?.</h4>
+    <form id="q6">
+			<label class="radio-inline">
+				<input type="radio" value="1" name="radio6"> 1 (No Knowledge / Want to Learn)
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="2" name="radio6"> 2
+			</label>    
+			<label class="radio-inline">
+				<input type="radio" value="3" name="radio6"> 3
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="4" name="radio6"> 4
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="5" name="radio6"> 5 (Master / Want to Teach)
+			</label>
+		</form>
+
+		<h3><strong>Question 7</strong></h3>
+    <h4>How strong are you at GitHub?.</h4>
+    <form id="q7">
+			<label class="radio-inline">
+				<input type="radio" value="1" name="radio7"> 1 (No Knowledge / Want to Learn)
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="2" name="radio7"> 2
+			</label>    
+			<label class="radio-inline">
+				<input type="radio" value="3" name="radio7"> 3
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="4" name="radio7"> 4
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="5" name="radio7"> 5 (Master / Want to Teach)
+			</label>
+		</form>
+
+		<h3><strong>Question 8</strong></h3>
+    <h4>How strong are you at Node.js?.</h4>
+    <form id="q8">
+			<label class="radio-inline">
+				<input type="radio" value="1" name="radio8"> 1 (No Knowledge / Want to Learn)
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="2" name="radio8"> 2
+			</label>    
+			<label class="radio-inline">
+				<input type="radio" value="3" name="radio8"> 3
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="4" name="radio8"> 4
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="5" name="radio8"> 5 (Master / Want to Teach)
+			</label>
+		</form>
+
+		<h3><strong>Question 9</strong></h3>
+    <h4>How strong are you at NPM packages (Express, handlebars, request)?.</h4>
+    <form id="q9">
+			<label class="radio-inline">
+				<input type="radio" value="1" name="radio9"> 1 (No Knowledge / Want to Learn)
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="2" name="radio9"> 2
+			</label>    
+			<label class="radio-inline">
+				<input type="radio" value="3" name="radio9"> 3
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="4" name="radio9"> 4
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="5" name="radio9"> 5 (Master / Want to Teach)
+			</label>
+		</form>
+
+		<h3><strong>Question 10</strong></h3>
+    <h4>How strong are you at mySQL?.</h4>
+    <form id="q10">
+			<label class="radio-inline">
+				<input type="radio" value="1" name="radio10"> 1 (No Knowledge / Want to Learn)
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="2" name="radio10"> 2
+			</label>    
+			<label class="radio-inline">
+				<input type="radio" value="3" name="radio10"> 3
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="4" name="radio10"> 4
+			</label>
+			<label class="radio-inline">
+				<input type="radio" value="5" name="radio10"> 5 (Master / Want to Teach)
+			</label>
+		</form>
+
     <br>
     <br>
 
@@ -223,6 +324,8 @@
 
   <script type="text/javascript">
 
+		var subjects = ["HTML", "CSS", "Bootstrap", "JavaScript", "API's / AJAX", "Data Persistance", "gitHub", "Node.js", "NPM Packages", "mySQL"];
+
     // Capture the form inputs
     $("#submit").on("click", function(event) {
       event.preventDefault();
@@ -240,12 +343,11 @@
             document.querySelector('input[name="radio3"]:checked').value,
             document.querySelector('input[name="radio4"]:checked').value,
             document.querySelector('input[name="radio5"]:checked').value,
-            // document.querySelector('input[name="radio6"]:checked').value,
-            // document.querySelector('input[name="radio7"]:checked').value,
-            // document.querySelector('input[name="radio8"]:checked').value,
-            // document.querySelector('input[name="radio9"]:checked').value,
-            // document.querySelector('input[name="radio10"]:checked').value,
-
+            document.querySelector('input[name="radio6"]:checked').value,
+            document.querySelector('input[name="radio7"]:checked').value,
+            document.querySelector('input[name="radio8"]:checked').value,
+            document.querySelector('input[name="radio9"]:checked').value,
+            document.querySelector('input[name="radio10"]:checked').value,
           ]
 				};
 				console.log(newFriend); //test
@@ -268,17 +370,16 @@
 					}
 
 					// Display best learn from result
-					if (matches.learn[0].rating < 0) {
-				
+					if (matches.learn[0].rating < 0) { // need -1 to learn
 						for (var i = 0; i < matches.learn.length; i++) {
 							var newDiv = $("<div>").append($("<h3>").text(matches.learn[i].friend.name));
 							newDiv.append("<img src=" + matches.learn[0].friend.photo + " class='img-responsive'>");
-							newDiv.append($("<h4>").text(matches.learn[i].friend.name + " has a +" + Math.abs(matches.learn[i].rating) + " score than you in " + matches.learn[i].index));
+							newDiv.append($("<h4>").text(matches.learn[i].friend.name + " has a +" + Math.abs(matches.learn[i].rating) + " score than you in the subject: " + subjects[matches.learn[i].index])) + ".";
 
 							// Show the modal with the best match
 							$("#learnText").prepend(newDiv);
 						}
-					} else {
+					} else { // if no one knows more than you
 						$("#learnText").append($("<h3>").text("Wow! You already know everything."));
 						}
 					// Display best teach to result
@@ -286,13 +387,13 @@
 						for (var i = 0; i < matches.teach.length; i++) {
 							var newDiv = $("<div>").append($("<h3>").text(matches.teach[i].friend.name));
 							newDiv.append("<img src=" + matches.teach[0].friend.photo + " class='img-responsive'>");
-							newDiv.append($("<h4>").text("Score: " + matches.teach[i].rating))
+							newDiv.append($("<h4>").text(matches.teach[i].friend.name + " has a -" + Math.abs(matches.teach[i].rating) + " score than you in the subject: " + subjects[matches.teach[i].index])) + ".";
 
 							// Show the modal with the best match
 							$("#teachText").prepend(newDiv);
 
 						}
-					} else {
+					} else { // if you dont have a +2 score over someone
 						$("#teachText").append($("<h3>").text("Sorry, your scores are too low to teach."));
 					}
 					$("#resultsModal").modal("toggle");
