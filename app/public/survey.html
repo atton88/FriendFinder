@@ -10,7 +10,6 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <!-- Font Awesome Glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -382,6 +381,7 @@
 					} else { // if no one knows more than you
 						$("#learnText").append($("<h3>").text("Wow! You already know everything."));
 						}
+						
 					// Display best teach to result
 					if (matches.teach[0].rating >= 2) { // need +2 to teach
 						for (var i = 0; i < matches.teach.length; i++) {
@@ -397,7 +397,6 @@
 						$("#teachText").append($("<h3>").text("Sorry, your scores are too low to teach."));
 					}
 					$("#resultsModal").modal("toggle");
-
         });
       } else {
         alert("Please fill out all fields before submitting!");
@@ -411,5 +410,4 @@
   </script>
 
 </body>
-
 </html>
