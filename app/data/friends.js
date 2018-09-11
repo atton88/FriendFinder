@@ -5,7 +5,7 @@ var friends = [
         "name": "One",
         "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
-            10,
+            5,
             1,
             4,
             4,
@@ -21,7 +21,7 @@ var friends = [
         "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
-            0,
+            1,
             4,
             4,
             5,
@@ -37,7 +37,7 @@ var friends = [
         "scores": [
             5,
             1,
-            10,
+            5,
             4,
             5,
             1,
@@ -53,7 +53,7 @@ var friends = [
             5,
             1,
             4,
-            10,
+            5,
             5,
             1,
             2,
@@ -69,7 +69,7 @@ var friends = [
             1,
             4,
             4,
-            10,
+            5,
             1,
             2,
             5,
@@ -85,7 +85,7 @@ var friends = [
             4,
             4,
             5,
-            10,
+            5,
             2,
             5,
             4,
@@ -101,7 +101,7 @@ var friends = [
             4,
             5,
             1,
-            10,
+            5,
             5,
             4,
             1
@@ -117,7 +117,7 @@ var friends = [
             5,
             1,
             2,
-            10,
+            5,
             4,
             1
         ]

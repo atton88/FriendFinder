@@ -54,10 +54,7 @@
 				<input type="radio" value="4" name="radio1"> 4
 			</label>
 			<label class="radio-inline">
-				<input type="radio" value="5" name="radio1"> 5 (Master / Want to Teach) |
-			</label>
-			<label class="radio-inline">
-					<input type="radio" value="-1" name="radio1"> Skip
+				<input type="radio" value="5" name="radio1"> 5 (Master / Want to Teach) 
 			</label>
 		</form>
 
@@ -165,9 +162,56 @@
 					<div class="modal-header">
 						<h1 class="modal-title">Results</h1>
 						<button type="button" class="close" data-dismiss="modal"></button>
-						<h2>Best Overall Match:</h2>
 					</div>
 					<div id="modalBody" class="modal-body">
+
+						<!-- Accordion -->
+
+						<div id="accordion">
+								<div class="card">
+										<div class="card-header" id="headingOne">
+											<h5 class="mb-0">
+												<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne">
+													<h2> Best Overall </h2>
+												</button>
+											</h5>
+										</div>
+										<div id="collapseOne" class="collapse" data-parent="#accordion">
+											<div id="sumText" class="card-body">
+											</div>
+										</div>
+									</div>
+									<hr>
+
+								<div class="card">
+									<div class="card-header" id="headingTwo">
+										<h5 class="mb-0">
+											<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo">
+												<h2>Best to Learn From </h2>
+											</button>
+										</h5>
+									</div>
+									<div id="collapseTwo" class="collapse" data-parent="#accordion">
+										<div id="learnText" class="card-body">
+										</div>
+									</div>
+								</div>
+								<hr>
+
+								<div class="card">
+									<div class="card-header" id="headingThree">
+										<h5 class="mb-0">
+											<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree">
+												<h2>	Best to Teach </h2>
+											</button>
+										</h5>
+									</div>
+									<div id="collapseThree" class="collapse" data-parent="#accordion">
+										<div id="teachText" class="card-body">
+										</div>
+									</div>
+								</div>
+							</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -183,26 +227,7 @@
     $("#submit").on("click", function(event) {
       event.preventDefault();
 
-      // Form validation
-      // function validateForm() {
-      //   var isValid = true;
-      //   $(".form-control").each(function() {
-      //     if ($(this).val() === "") {
-      //       isValid = false;
-      //     }
-      //   });
 
-      //   $(".chosen-select").each(function() {
-
-      //     if ($(this).val() === "") {
-      //       isValid = false;
-      //     }
-      //   });
-      //   return isValid;
-      // }
-
-      // If all required fields are filled
-      // if (validateForm()) {
 				if (true) {
 				// Create an object for the user's data
 					
@@ -231,29 +256,57 @@
 					console.log("result"),
 					console.log(matches);
 
-					// Display results
-
-					// <h2 id="friendName"></h2>
-					// 	<img id="friendPic" src="https://secure.i.telegraph.co.uk/multimedia/archive/03290/kitten_potd_3290498k.jpg" alt="" class="img-responsive">					
-				
+					// Display best overall result
 					for (var i = 0; i < matches.sum.length; i++) {
-					var newDiv = $("<div>").append($("<h2>").text(matches.sum[i].friend.name));
-					newDiv.append("<img src=" + matches.sum[0].friend.photo + " class='img-responsive'>");
-					newDiv.append($("<h4>").text("Score: " + matches.sum[i].rating))
+						var newDiv = $("<div>").append($("<h3>").text(matches.sum[i].friend.name));
+						newDiv.append("<img src=" + matches.sum[0].friend.photo + " class='img-responsive'>");
+						newDiv.append($("<h4>").text("Score: " + matches.sum[i].rating))
 
-					// Show the modal with the best match
-					$("#modalBody").prepend(newDiv);
+						// Show the modal with the best match
+						$("#sumText").prepend(newDiv);
 
 					}
+
+					// Display best learn from result
+					if (matches.learn[0].rating < 0) {
+				
+						for (var i = 0; i < matches.learn.length; i++) {
+							var newDiv = $("<div>").append($("<h3>").text(matches.learn[i].friend.name));
+							newDiv.append("<img src=" + matches.learn[0].friend.photo + " class='img-responsive'>");
+							newDiv.append($("<h4>").text(matches.learn[i].friend.name + " has a +" + Math.abs(matches.learn[i].rating) + " score than you in " + matches.learn[i].index));
+
+							// Show the modal with the best match
+							$("#learnText").prepend(newDiv);
+						}
+					} else {
+						$("#learnText").append($("<h3>").text("Wow! You already know everything."));
+						}
+					// Display best teach to result
+					if (matches.teach[0].rating >= 2) { // need +2 to teach
+						for (var i = 0; i < matches.teach.length; i++) {
+							var newDiv = $("<div>").append($("<h3>").text(matches.teach[i].friend.name));
+							newDiv.append("<img src=" + matches.teach[0].friend.photo + " class='img-responsive'>");
+							newDiv.append($("<h4>").text("Score: " + matches.teach[i].rating))
+
+							// Show the modal with the best match
+							$("#teachText").prepend(newDiv);
+
+						}
+					} else {
+						$("#teachText").append($("<h3>").text("Sorry, your scores are too low to teach."));
+					}
 					$("#resultsModal").modal("toggle");
-
-
 
         });
       } else {
         alert("Please fill out all fields before submitting!");
       }
-    });
+		});
+		
+		// reload page on modal close
+		$('#resultsModal').on('hidden.bs.modal', function () {
+			location.reload();
+		})
   </script>
 
 </body>

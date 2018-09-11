@@ -15,7 +15,7 @@ module.exports = function(app){
 
         // Match Logic
         var newScores = req.body.scores;
-        var matches = {sum:[]};
+        var matches = {sum:[], teach:[{rating:0}], learn:[{rating:5}]}; //arrays for future implementation of multiple results
 
         console.log(typeof newScores[0])
 
@@ -24,42 +24,68 @@ module.exports = function(app){
           var friendScores = elem.scores;
 
           // Calculate the differences in arrays
-          var differenceArr = newScores.map(function(score, index){
-            return Math.abs(score - friendScores[index])
+          var diffArr = newScores.map(function(score, index){
+            return score - friendScores[index]
           })
 
 
-          // get sum
+          // get sum for biggest discrepancy in points
           var sum = 0;
-          differenceArr.forEach(function(elem){
-            sum += elem;
+
+
+          diffArr.forEach(function(elem){
+            sum += Math.abs(elem);
           })
 
-          console.log(differenceArr, sum) //test
+          console.log(diffArr, sum) //test
 
 
-          // check for high sum and replace if higher
-          if (!matches.sum[0] || matches.sum[0].rating < sum) {
+          // check for high sum and replace if higher or equal (to match with newest member)
+          if (!matches.sum[0] || matches.sum[0].rating <= sum) {
             matches.sum[0] = {
               friend: elem,
               rating: sum
             }
             // console.log(matches)
-          } else if (matches.sum[0].rating === sum) { // will enter ties
-            matches.sum.push({
-              friend: elem,
-              rating: sum
-            })
+          
+          // code for including ties to final result
+          // } else if (matches.sum[0].rating === sum) { // will enter ties
+          //   matches.sum.push({
+          //     friend: elem,
+          //     rating: sum
+          //   })
+          }
 
+          // get lowest score, more recent gets priority
+          for (var i = 0; i < diffArr.length; i++ ){
+            if (diffArr[i] <= matches.learn[0].rating) {
+              matches.learn[0] = {
+                friend: elem,
+                rating: diffArr[i],
+                index: i
+              }
+            }
+          }
 
+          // get highest score, more recent gets priority
+          for (var i = 0; i < diffArr.length; i++ ){
+            if (diffArr[i] >= matches.teach[0].rating) {
+              matches.teach[0] = {
+                friend: elem,
+                rating: diffArr[i],
+                index: i
+              }
+            }
           }
 
         })
 
         console.log("test")
         console.log(matches)
+        console.log(matches.learn)
 
-        friends.push(matches);
+
+        friends.push(res.body);
         res.json(matches);
         // console.log(friends) //test
 
