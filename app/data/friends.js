@@ -3,7 +3,7 @@
 var friends = [
     {
         "name": "One",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             10,
             1,
@@ -18,10 +18,10 @@ var friends = [
         ]
     }, {
         "name": "Two",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
-            10,
+            0,
             4,
             4,
             5,
@@ -33,7 +33,7 @@ var friends = [
         ]
     }, {
         "name": "Three",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
             1,
@@ -48,7 +48,7 @@ var friends = [
         ]
     }, {
         "name": "Four",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
             1,
@@ -63,7 +63,7 @@ var friends = [
         ]
     }, {
         "name": "Five",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
             1,
@@ -78,7 +78,7 @@ var friends = [
         ]
     }, {
         "name": "Six",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
             1,
@@ -93,7 +93,7 @@ var friends = [
         ]
     }, {
         "name": "Seven",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
             1,
@@ -108,7 +108,7 @@ var friends = [
         ]
     }, {
         "name": "Eight",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
             1,
@@ -123,33 +123,33 @@ var friends = [
         ]
     }, {
         "name": "Nine",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
             5,
-            1,
-            4,
-            4,
             5,
-            1,
-            2,
             5,
-            10,
-            1
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
         ]
     }, {
         "name": "Ten",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo": "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.ngsversion.1484159404151.adapt.1900.1.jpg",
         "scores": [
-            5,
             1,
-            4,
-            4,
-            5,
             1,
-            2,
-            5,
-            4,
-            10
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
         ]
     },
 ]

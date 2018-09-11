@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Pair Programming Pals</title>
 
-  <!-- Latest compiled and minified CSS & JS -->
+  <!-- Bootstrap and jQuery -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -57,7 +57,7 @@
 				<input type="radio" value="5" name="radio1"> 5 (Master / Want to Teach) |
 			</label>
 			<label class="radio-inline">
-					<input type="radio" value="skip" name="radio1"> Skip
+					<input type="radio" value="-1" name="radio1"> Skip
 			</label>
 		</form>
 
@@ -157,7 +157,24 @@
 
   </div>
 
-  <!-- Modal -->
+	<!-- Modal -->
+	
+  <div id="resultsModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title">Results</h1>
+						<button type="button" class="close" data-dismiss="modal"></button>
+						<h2>Best Overall Match:</h2>
+					</div>
+					<div id="modalBody" class="modal-body">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
   <script type="text/javascript">
@@ -187,37 +204,52 @@
       // If all required fields are filled
       // if (validateForm()) {
 				if (true) {
-        // Create an object for the user"s data
-        var userData = {
+				// Create an object for the user's data
+					
+        var newFriend = {
           name: $("#name").val(),
           photo: $("#photo").val(),
           scores: [
             document.querySelector('input[name="radio1"]:checked').value,
-						document.querySelector('input[name="radio2"]:checked').value,
-						document.querySelector('input[name="radio3"]:checked').value,
-						document.querySelector('input[name="radio4"]:checked').value,
-						document.querySelector('input[name="radio5"]:checked').value,
-						// document.querySelector('input[name="radio6"]:checked').value,
-						// document.querySelector('input[name="radio7"]:checked').value,
-						// document.querySelector('input[name="radio8"]:checked').value,
-						// document.querySelector('input[name="radio9"]:checked').value,
-						// document.querySelector('input[name="radio10"]:checked').value,
+            document.querySelector('input[name="radio2"]:checked').value,
+            document.querySelector('input[name="radio3"]:checked').value,
+            document.querySelector('input[name="radio4"]:checked').value,
+            document.querySelector('input[name="radio5"]:checked').value,
+            // document.querySelector('input[name="radio6"]:checked').value,
+            // document.querySelector('input[name="radio7"]:checked').value,
+            // document.querySelector('input[name="radio8"]:checked').value,
+            // document.querySelector('input[name="radio9"]:checked').value,
+            // document.querySelector('input[name="radio10"]:checked').value,
 
           ]
 				};
-				console.log(userData); //test
+				console.log(newFriend); //test
 
-        // AJAX post the data to the friends API.
-        // $.post("/api/friends", userData, function(data) {
+        // send data to server
+        $.post("/api/friends", newFriend, function(matches) {
 
-        //   // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-        //   $("#match-name").text(data.name);
-        //   $("#match-img").attr("src", data.photo);
+					console.log("result"),
+					console.log(matches);
 
-        //   // Show the modal with the best match
-        //   $("#results-modal").modal("toggle");
+					// Display results
 
-        // });
+					// <h2 id="friendName"></h2>
+					// 	<img id="friendPic" src="https://secure.i.telegraph.co.uk/multimedia/archive/03290/kitten_potd_3290498k.jpg" alt="" class="img-responsive">					
+				
+					for (var i = 0; i < matches.sum.length; i++) {
+					var newDiv = $("<div>").append($("<h2>").text(matches.sum[i].friend.name));
+					newDiv.append("<img src=" + matches.sum[0].friend.photo + " class='img-responsive'>");
+					newDiv.append($("<h4>").text("Score: " + matches.sum[i].rating))
+
+					// Show the modal with the best match
+					$("#modalBody").prepend(newDiv);
+
+					}
+					$("#resultsModal").modal("toggle");
+
+
+
+        });
       } else {
         alert("Please fill out all fields before submitting!");
       }
